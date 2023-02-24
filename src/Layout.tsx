@@ -1,15 +1,16 @@
 import React, { PropsWithChildren, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import { Close, Hamburger, Logo } from './assets';
 
-import { Link } from 'react-router-dom';
 import styles from './styles/Layout.module.scss';
 
 export default function Layout(props: PropsWithChildren) {
   const [menuVisible, setMenuVisible] = useState(false);
+  const location = useLocation();
 
   return (
-    <div className={styles.Layout}>
+    <div className={styles.Layout} aria-label={location.pathname}>
       <header>
         <Logo />
         <menu aria-hidden={!menuVisible}>

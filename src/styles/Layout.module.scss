@@ -1,12 +1,62 @@
+@use 'sass:map';
 @import './global.scss';
 
-.Layout {
-  min-height: 100dvh;
-  background-image: url('/home/background-home-mobile.jpg');
+$background-image: (
+  'home': (
+    'mobile': '/home/background-home-mobile.jpg',
+    'tablet': '/home/background-home-tablet.jpg',
+    'desktop': '/home/background-home-desktop.jpg',
+  ),
+  'destination': (
+    'mobile': '/destination/background-destination-mobile.jpg',
+    'tablet': '/destination/background-destination-tablet.jpg',
+    'desktop': '/destination/background-destination-desktop.jpg',
+  ),
+  'crew': (
+    'mobile': '/crew/background-crew-mobile.jpg',
+    'tablet': '/crew/background-crew-tablet.jpg',
+    'desktop': '/crew/background-crew-desktop.jpg',
+  ),
+  'technology': (
+    'mobile': '/technology/background-technology-mobile.jpg',
+    'tablet': '/technology/background-technology-tablet.jpg',
+    'desktop': '/technology/background-technology-desktop.jpg',
+  ),
+);
+
+@mixin background-image($page) {
+  $page-map: map.get($background-image, $page);
+
+  background-image: url(map.get($page-map, 'mobile'));
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    background-image: url(map.get($page-map, 'tablet'));
+  }
+
+  @media screen and (min-width: 1366px) {
+    background-image: url(map.get($page-map, 'desktop'));
+  }
+}
+
+.Layout {
+  min-height: 100dvh;
   color: $primary;
+
+  &[aria-label='/home'] {
+    @include background-image('home');
+  }
+  &[aria-label='/destination'] {
+    @include background-image('destination');
+  }
+  &[aria-label='/crew'] {
+    @include background-image('crew');
+  }
+  &[aria-label='/technology'] {
+    @include background-image('technology');
+  }
 
   header {
     display: flex;
@@ -68,8 +118,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url('/home/background-home-tablet.jpg');
-
     header {
       .hamburger-btn {
         display: none;
@@ -147,7 +195,5 @@
         opacity: 0.25;
       }
     }
-
-    background-image: url('/home/background-home-desktop.jpg');
   }
 }
