@@ -1,0 +1,91 @@
+@import './global.scss';
+
+.Home {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+
+  h1 {
+    margin: clamp(1rem, 4dvw, 1.5rem) 0;
+    line-height: clamp(100px, 19dvw, 150px);
+    font-size: clamp(5rem, 18dvw, 9.4rem);
+    font-family: $font;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    letter-spacing: 2.7px;
+    font-size: clamp(1rem, 3dvw, 1.25rem);
+    font-family: $subFont;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $secondary;
+  }
+
+  p {
+    max-width: 27.75rem;
+    margin: 0 auto;
+    line-height: 25px;
+    font-size: clamp(15px, 2.5dw, 1rem);
+    color: $secondary;
+  }
+
+  .launch-btn {
+    width: clamp(9.4rem, 30dvw, 15.25rem);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    margin-top: clamp(5rem, 16dvh, 9.75rem);
+    line-height: clamp(9.4rem, 30dvw, 15.25rem);
+    font-size: clamp(1.25rem, 4dvw, 2rem);
+    border-radius: 50%;
+    text-align: center;
+    background-color: $primary;
+    color: $contrast;
+    font-family: $font;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      animation: outline-bounce 1s infinite forwards;
+      outline-style: solid;
+      outline-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @media screen and (min-width: 1366px) {
+    display: flex;
+    align-items: flex-end;
+    margin: 15.7rem auto 0;
+    padding: 10.3rem;
+    max-width: 1440px;
+
+    .text {
+      text-align: left;
+
+      h5 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 2rem;
+      }
+    }
+
+    .launch-btn {
+      height: clamp(9.4rem, 30dvw, 15.25rem);
+      margin: unset;
+      margin-left: auto;
+    }
+  }
+}
+
+@keyframes outline-bounce {
+  0%,
+  100% {
+    outline-width: 0;
+  }
+  50% {
+    outline-width: 5.5rem;
+  }
+}

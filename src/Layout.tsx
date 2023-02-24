@@ -2,6 +2,7 @@ import React, { PropsWithChildren, useState } from 'react';
 
 import { Close, Hamburger, Logo } from './assets';
 
+import { Link } from 'react-router-dom';
 import styles from './styles/Layout.module.scss';
 
 export default function Layout(props: PropsWithChildren) {
@@ -16,20 +17,28 @@ export default function Layout(props: PropsWithChildren) {
 
           <ul>
             <li aria-current>
-              <strong>00</strong>
-              <span>Home</span>
+              <Link to="/">
+                <strong>00</strong>
+                <span>Home</span>
+              </Link>
             </li>
             <li>
-              <strong>01</strong>
-              <span>Destination</span>
+              <Link to="/destination">
+                <strong>01</strong>
+                <span>Destination</span>
+              </Link>
             </li>
             <li>
-              <strong>02</strong>
-              <span>Crew</span>
+              <Link to="/crew">
+                <strong>02</strong>
+                <span>Crew</span>
+              </Link>
             </li>
             <li>
-              <strong>03</strong>
-              <span>Technology</span>
+              <Link to="/technology">
+                <strong>03</strong>
+                <span>Technology</span>
+              </Link>
             </li>
           </ul>
         </menu>

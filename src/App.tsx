@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Layout from './Layout';
-import './styles/App.scss';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Layout>Something</Layout>
-    </div>
+    <Routes>
+      <Route index element={<Home />} />
+    </Routes>
   );
 }
 

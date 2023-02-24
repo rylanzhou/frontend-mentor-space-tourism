@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import './global.scss';
 
 .Layout {
   min-height: 100dvh;
@@ -6,12 +6,12 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  color: $primary;
 
   header {
     display: flex;
     align-items: center;
     padding: 1.5rem;
-    color: $primary;
 
     .hamburger-btn {
       margin-left: auto;
@@ -27,7 +27,7 @@
       margin-left: auto;
       padding: 2rem 0rem 0 2rem;
       letter-spacing: 2.7px;
-      font-family: 'Barlow Condensed';
+      font-family: $subFont;
       text-transform: uppercase;
       background-color: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(50px);
@@ -49,6 +49,11 @@
         li {
           margin: 0.5rem 0;
           padding: 0.5rem 0;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
 
           strong {
             margin-right: 0.68rem;
@@ -78,6 +83,7 @@
         width: unset;
         height: unset;
         font-size: 14px;
+        transition: none;
         transform: translateX(0) !important;
 
         .close-btn {
