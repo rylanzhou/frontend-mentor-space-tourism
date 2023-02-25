@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
 
+@import './global.scss';
 @import './reset.scss';
 
 :root {
@@ -10,4 +11,58 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+h2 {
+  line-height: clamp(4rem, 15dvw, 5.75rem);
+  font-size: clamp(3.5rem, 12dvw, 5rem);
+  font-family: $font;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h5 {
+  letter-spacing: 2.7px;
+  font-size: clamp(1rem, 3dvw, 1.25rem);
+  font-family: $subFont;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $secondary;
+}
+
+p {
+  line-height: 1.5625rem;
+  color: $secondary;
+  font-size: clamp(15px, 2.5dvw, 1rem);
+}
+
+@media screen and (min-width: 1366px) {
+  h2 {
+    font-size: 6.25rem;
+    line-height: 7.8175rem;
+  }
+
+  h5 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+}
+
+.subheading1 {
+  padding: 0.75rem 0;
+  font-size: 1.75rem;
+  font-family: $font;
+  text-transform: uppercase;
+}
+
+.subheading2 {
+  font-size: 0.875rem;
+  letter-spacing: 2.35px;
+  font-family: $subFont;
+  color: $secondary;
+  text-transform: uppercase;
 }

@@ -13,21 +13,9 @@
     text-transform: uppercase;
   }
 
-  h5 {
-    letter-spacing: 2.7px;
-    font-size: clamp(1rem, 3dvw, 1.25rem);
-    font-family: $subFont;
-    font-weight: normal;
-    text-transform: uppercase;
-    color: $secondary;
-  }
-
   p {
     max-width: 27.75rem;
     margin: 0 auto;
-    line-height: 25px;
-    font-size: clamp(15px, 2.5dw, 1rem);
-    color: $secondary;
   }
 
   .launch-btn {
@@ -61,15 +49,6 @@
 
     .text {
       text-align: left;
-
-      h5 {
-        font-size: 1.75rem;
-      }
-
-      p {
-        font-size: 18px;
-        line-height: 2rem;
-      }
     }
 
     .launch-btn {

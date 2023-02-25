@@ -1,0 +1,130 @@
+@import './global.scss';
+
+.Destination {
+  padding: 1.5rem;
+  text-align: center;
+
+  h5 span {
+    margin-right: 1.125rem;
+    font-weight: bold;
+    opacity: 0.25;
+  }
+
+  img {
+    width: clamp(10.625rem, 40dvw, 18.75rem);
+    margin: 2rem auto 1.625rem;
+  }
+
+  .info {
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.625rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.875rem;
+      letter-spacing: 2.3635px;
+      text-transform: uppercase;
+      font-family: $subFont;
+
+      li {
+        height: 1.75rem;
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &[aria-current='true'] {
+          border-bottom: 3px solid $primary;
+        }
+      }
+    }
+
+    p {
+      max-width: 35.8rem;
+      margin: 0 auto;
+    }
+
+    .divider {
+      margin: 2rem 0;
+      height: 1px;
+      background-color: #383b4b;
+    }
+
+    .statistics {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 2.5rem 2.5rem 3.875rem;
+
+    h5 {
+      text-align: left;
+    }
+
+    img {
+      margin: 3.75rem auto 3.3rem;
+    }
+
+    .info {
+      ul {
+        gap: 2.25rem;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+      }
+
+      .divider {
+        margin: 3rem 0;
+      }
+
+      .statistics {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1366px) {
+    max-width: 1440px;
+    padding: 4.75rem 10.2rem;
+    margin: 0 auto;
+    text-align: left;
+
+    .content {
+      display: flex;
+      align-items: flex-start;
+      gap: 9.8125rem;
+      margin-top: 4rem;
+
+      img {
+        width: 27.815rem;
+        margin-left: 4rem;
+      }
+
+      .info {
+        max-width: 27.8125rem;
+
+        ul {
+          justify-content: flex-start;
+          margin-bottom: 2.3125rem;
+        }
+
+        p {
+          margin-top: 0.875rem;
+        }
+
+        .divider {
+          margin: 3.375rem 0 1.75rem;
+        }
+
+        .statistics {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
