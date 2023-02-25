@@ -17,30 +17,14 @@ export default function Layout(props: PropsWithChildren) {
           <Close className={styles['close-btn']} onClick={() => setMenuVisible(false)} />
 
           <ul>
-            <li aria-current>
-              <Link to="/">
-                <strong>00</strong>
-                <span>Home</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/destination">
-                <strong>01</strong>
-                <span>Destination</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/crew">
-                <strong>02</strong>
-                <span>Crew</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/technology">
-                <strong>03</strong>
-                <span>Technology</span>
-              </Link>
-            </li>
+            {['home', 'destination', 'crew', 'technology'].map((each, index) => (
+              <li key={index} aria-current={'/' + each === location.pathname}>
+                <Link to={'/' + each}>
+                  <strong>0{index}</strong>
+                  <span>{each}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </menu>
 

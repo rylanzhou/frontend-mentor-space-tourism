@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
+import Destination from './pages/Destination';
 import Home from './pages/Home';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <Routes>
       <Route index element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/destination" element={<Destination />} />
     </Routes>
   );
 }

@@ -109,7 +109,8 @@ $background-image: (
             margin-right: 0.68rem;
           }
 
-          &[aria-current='true'] {
+          &[aria-current='true'],
+          &:hover {
             border-right: 4px solid $primary;
           }
         }
@@ -150,9 +151,11 @@ $background-image: (
 
           li {
             margin: 0 1rem;
-            padding: 2.3rem 0;
+            height: 6rem;
+            line-height: 5rem;
 
-            &[aria-current='true'] {
+            &[aria-current='true'],
+            &:hover {
               border: none;
               border-bottom: 2px solid $primary;
             }
@@ -165,6 +168,8 @@ $background-image: (
   @media screen and (min-width: 1366px) {
     header {
       position: relative;
+      max-width: 1440px;
+      margin: 0 auto;
       padding: 2.5rem 0 0 3.4rem;
 
       menu {
