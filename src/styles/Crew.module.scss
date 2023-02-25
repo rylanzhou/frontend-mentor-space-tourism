@@ -1,0 +1,136 @@
+@import './global.scss';
+
+.Crew {
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    img {
+      height: clamp(14rem, 40dvw, 35.75rem);
+      margin: 0 auto;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #383b4b;
+    }
+
+    .info {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+
+        li {
+          width: 10px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          opacity: 0.17;
+          background-color: white;
+          transition: opacity 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          &[aria-current='true'] {
+            opacity: 1;
+          }
+        }
+      }
+
+      h3 {
+        margin: 0.5rem 0 1rem;
+      }
+
+      p {
+        max-width: 28.625rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    h5 {
+      text-align: left;
+    }
+
+    .content {
+      margin-top: 3.75rem;
+
+      .info {
+        order: 1;
+
+        .text {
+          order: 1;
+        }
+
+        ul {
+          order: 2;
+        }
+      }
+
+      .photo {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: 1;
+        transform: translateX(-50%);
+        overflow: hidden;
+        order: 2;
+
+        img {
+          height: clamp(0px, 50dvh, 35.75rem);
+          margin-bottom: -2.5rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1366px) {
+    padding-bottom: 0;
+
+    .content {
+      flex-direction: row;
+      margin-top: 0;
+
+      .photo {
+        position: fixed;
+        bottom: 0;
+        transform: none;
+
+        img {
+          height: clamp(44.5rem, 50dvw, 60rem);
+        }
+      }
+
+      .info {
+        margin: 0;
+
+        ul {
+          justify-content: flex-start;
+          margin-top: 7.5rem;
+
+          li {
+            width: 15px;
+          }
+        }
+
+        .text {
+          margin-top: 9.625rem;
+
+          h3 {
+            margin: 15px 0 37px 0;
+          }
+        }
+      }
+    }
+  }
+}
