@@ -1,15 +1,6 @@
 @import './global.scss';
 
 .Destination {
-  padding: 1.5rem;
-  text-align: center;
-
-  h5 span {
-    margin-right: 1.125rem;
-    font-weight: bold;
-    opacity: 0.25;
-  }
-
   img {
     width: clamp(10.625rem, 40dvw, 18.75rem);
     margin: 2rem auto 1.625rem;
@@ -59,8 +50,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    padding: 2.5rem 2.5rem 3.875rem;
-
     h5 {
       text-align: left;
     }
@@ -89,11 +78,6 @@
   }
 
   @media screen and (min-width: 1366px) {
-    max-width: 1440px;
-    padding: 4.75rem 10.2rem;
-    margin: 0 auto;
-    text-align: left;
-
     .content {
       display: flex;
       align-items: flex-start;

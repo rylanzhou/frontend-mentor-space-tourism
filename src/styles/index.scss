@@ -28,12 +28,29 @@ h5 {
   font-weight: normal;
   text-transform: uppercase;
   color: $secondary;
+
+  span {
+    margin-right: 1.125rem;
+    font-weight: bold;
+    opacity: 0.25;
+  }
 }
 
 p {
   line-height: 1.5625rem;
   color: $secondary;
   font-size: clamp(15px, 2.5dvw, 1rem);
+}
+
+main {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 2.5rem 2.5rem 3.875rem;
+  }
 }
 
 @media screen and (min-width: 1366px) {
@@ -49,6 +66,13 @@ p {
   p {
     font-size: 1.125rem;
     line-height: 2rem;
+  }
+
+  main {
+    max-width: 1440px;
+    padding: 4.75rem 10.2rem;
+    margin: 0 auto;
+    text-align: left;
   }
 }
 
