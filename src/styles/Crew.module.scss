@@ -53,6 +53,7 @@
 
       p {
         max-width: 28.625rem;
+        min-height: 5.25rem;
       }
     }
   }
@@ -116,7 +117,7 @@
 
         ul {
           justify-content: flex-start;
-          margin-top: 7.5rem;
+          margin-top: 5.5rem;
 
           li {
             width: 15px;
@@ -128,6 +129,10 @@
 
           h3 {
             margin: 15px 0 37px 0;
+          }
+
+          p {
+            min-height: 10rem;
           }
         }
       }

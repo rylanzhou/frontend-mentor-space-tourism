@@ -1,0 +1,141 @@
+@import './global.scss';
+
+.Technology {
+  .photo {
+    // to counteract layout's padding
+    width: 100dvw;
+    margin: 2rem 0 2.125rem -1.5rem;
+
+    img {
+      width: 100%;
+
+      &.portrait {
+        display: none;
+      }
+    }
+  }
+
+  .info {
+    ul {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.625rem;
+
+      li {
+        width: clamp(2.5rem, 8dvw, 3.75rem);
+        height: clamp(2.5rem, 8dvw, 3.75rem);
+        line-height: clamp(2.5rem, 8dvw, 3.75rem);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        font-family: $font;
+        font-size: clamp(1rem, 3dvw, 1.5rem);
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          border-color: $primary;
+        }
+
+        &[aria-current='true'] {
+          background-color: $primary;
+          color: $contrast;
+        }
+      }
+    }
+
+    .text {
+      span {
+        letter-spacing: 2.7px;
+        font-family: $subFont;
+        color: $secondary;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin: 0.5rem 0 1rem;
+      }
+
+      p {
+        max-width: 28.625rem;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    h5 {
+      text-align: left;
+    }
+
+    .photo {
+      margin: 2rem 0 3.5rem -2.5rem;
+    }
+
+    ul {
+      margin-bottom: 2.75rem;
+    }
+
+    .text h3 {
+      margin: 1rem 0 1rem;
+    }
+  }
+
+  @media screen and (min-width: 1366px) {
+    padding-right: 0;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.625rem;
+
+      .photo {
+        right: 0;
+        order: 2;
+        width: unset;
+        margin: 0;
+
+        img {
+          &.landscape {
+            display: none;
+          }
+
+          &.portrait {
+            display: block;
+            width: 32rem;
+          }
+        }
+      }
+
+      .info {
+        order: 1;
+        display: flex;
+        gap: 5rem;
+        margin-top: 7rem;
+
+        ul {
+          flex-direction: column;
+          justify-content: flex-start;
+          text-align: center;
+          gap: 2rem;
+
+          li {
+            width: 5rem;
+            height: 5rem;
+            line-height: 5rem;
+            font-size: 2rem;
+          }
+        }
+
+        .text {
+          width: 29.375rem;
+
+          p {
+            margin: 0;
+            padding-right: 1.625rem;
+          }
+        }
+      }
+    }
+  }
+}

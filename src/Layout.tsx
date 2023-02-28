@@ -12,7 +12,7 @@ export default function Layout(props: PropsWithChildren) {
   return (
     <div className={styles.Layout} aria-label={location.pathname}>
       <header>
-        <Logo />
+        <Logo className={styles.logo} />
         <menu aria-hidden={!menuVisible}>
           <Close className={styles['close-btn']} onClick={() => setMenuVisible(false)} />
 
